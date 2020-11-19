@@ -42,4 +42,4 @@ cargo = type6_cargo
 
 
 mining_credits = ((mining_bonus + cargo) * planetary_knowledge) * mining_yield
-print(str(d100) + ": " + str(mining_credits))
+print("D100 [{}] credits [{:,}].".format(d100, mining_credits))

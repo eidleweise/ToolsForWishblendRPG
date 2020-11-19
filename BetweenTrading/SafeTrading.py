@@ -38,4 +38,4 @@ cargo = asp_cargo
 
 
 trade_credits = profit_per_ton * trade_bonus * cargo
-print(str(d100) + ": profit_per_ton [" + str(profit_per_ton) + "] credits: " + str(trade_credits))
+print("D100 [{}] profit_per_ton [{:,}] credits [{:,}].".format(d100, profit_per_ton, trade_credits))
