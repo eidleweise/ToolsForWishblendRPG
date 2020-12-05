@@ -42,4 +42,5 @@ cargo = type6_cargo
 
 
 mining_credits = ((mining_bonus + cargo) * planetary_knowledge) * mining_yield
-print("D100 [{}] credits [{:,}].".format(d100, mining_credits))
+print("Between Adventures Mining")
+print("D100 [{}] (mining bonus [{}] + cargo [{}])) * planetary knowledge [{}] * mining yield [{}] = credits [{:,}].".format(d100, mining_bonus, cargo, planetary_knowledge, mining_yield, mining_credits))

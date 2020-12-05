@@ -49,7 +49,7 @@ d100 = random.randint(1, 101)
 # Skill Exploration Val
 
 equip_exploration_bonus = 30 # See Table Above
-jump_range = 14
+jump_range = 28
 navigation_bonus = 3
 
 jump_range_bonus = get_rangeModifier(jump_range)
