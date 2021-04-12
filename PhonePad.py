@@ -3,7 +3,7 @@
 from itertools import groupby
 
 # Use a dictionary as a lookup table
-dailpad = {
+dial_pad = {
     '2': ['a', 'b', 'c'],
     '3': ['d', 'e', 'f'],
     '4': ['g', 'h', 'i'],
@@ -36,10 +36,10 @@ def phone_pad(input_str):
             offset = len(list(letters)) - 1
 
             # Check if the number is a valid dialpad key (eg. 1 for example isn't)
-            if number in dailpad.keys():
+            if number in dial_pad.keys():
                 # Add the character to our output string and wrap
                 # if the number is greater than the length of the character list
-                output += dailpad[number][offset % len(dailpad[number])]
+                output += dial_pad[number][offset % len(dial_pad[number])]
             else:
                 raise ValueError(f'Unrecognized input "{number}"')
 
@@ -48,7 +48,7 @@ def phone_pad(input_str):
         print("input was text " + input_str)
         output = ''
         for letter in input_str:
-            for key, value in dailpad.items():
+            for key, value in dial_pad.items():
                 #print(key, value)
                 if letter in value:
                     index = 0
