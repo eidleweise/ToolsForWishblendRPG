@@ -31,10 +31,11 @@ def get_value(in_val):
 d100 = random.randint(1, 101)
 asp_cargo = 80
 type6_cargo = 104
-trade_bonus = 2
+conda_cargo = 432
+trade_bonus = 3
 profit_per_ton = get_value(d100)
 
-cargo = asp_cargo
+cargo = conda_cargo
 
 
 trade_credits = profit_per_ton * trade_bonus * cargo

@@ -48,7 +48,7 @@ d100 = random.randint(1, 101)
 # Fuel Scoop (Any type) 1
 # Skill Exploration Val
 
-equip_exploration_bonus = 30 # See Table Above
+equip_exploration_bonus = 4 # See Table Above
 jump_range = 28
 navigation_bonus = 3
 
