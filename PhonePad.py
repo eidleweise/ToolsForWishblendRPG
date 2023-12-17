@@ -16,9 +16,37 @@ dial_pad = {
 }
 
 
+def transNum(string):
+    number = 1
+
+    numberElements={
+        "a":2,"b":2,"c":2,
+        "d":3,"e":3,"f":3,
+        "g":4,"h":4,"i":4,
+        "j":5,"k":5,"l":5,
+        "m":6,"n":6,"o":6,
+        "p":7,"q":7,"r":7,"s":7,
+        "t":8,"u":8,"v":8,
+        "w":9,"x":9,"y":9,"z":9,
+    }
+    for ch in string:
+        number = numberElements[ch.lower()]
+    return number
+
+
+def translate(phone):
+    newNum = ""
+    for ch in phone:
+        if ch.lower() in ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]:
+            newNum = newNum + str(transNum(ch))
+        else:
+            newNum = newNum + ch
+    return newNum
+
+
 def phone_pad(input_str):
     # Convert to string if given a number
-    if (input_str.isnumeric()):
+    if input_str.isnumeric():
         if type(input_str) == int:
             input_str = str(input_str)
 
@@ -39,7 +67,13 @@ def phone_pad(input_str):
             if number in dial_pad.keys():
                 # Add the character to our output string and wrap
                 # if the number is greater than the length of the character list
-                output += dial_pad[number][offset % len(dial_pad[number])]
+                lenth_of_dialpad = len(dial_pad[number])
+
+                if offset > lenth_of_dialpad:
+                    remainder = offset - lenth_of_dialpad + 1
+
+                mod_len = offset % lenth_of_dialpad
+                output += dial_pad[number][mod_len]
             else:
                 raise ValueError(f'Unrecognized input "{number}"')
 
@@ -49,7 +83,6 @@ def phone_pad(input_str):
         output = ''
         for letter in input_str:
             for key, value in dial_pad.items():
-                #print(key, value)
                 if letter in value:
                     index = 0
                     for l in value:
